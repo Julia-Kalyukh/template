@@ -1,0 +1,27 @@
+// COLORS
+$color-blue: #43E8FF;
+$color-white: #FFFFFF;
+$color-gray: #A1A6BE;
+
+// Background
+$color-bg: rgba(77, 84, 116, 1);
+$color-bg-menu: rgba(31, 35, 57, 1);
+$color-bg-card: rgba(56, 62, 87, 1);
+
+// Fonts
+$color-header: $color-white;
+
+$color-text-light: $color-white;
+$color-text-dark: $color-gray;
+$color-text-link: $color-blue;
+
+$color-menu-link: $color-white;
+$color-menu-link-active: $color-blue;
+$color-menu-link-active-v2: rgba(35, 39, 58, 1);
+
+// Table 
+$color-table-border: #1f2339;
+
+// Gradient
+$gradient-light: radial-gradient(133.33% 2508.35% at -4.59% -10%, #32E6FF 0%, rgba(0, 255, 209, 0.81) 100%), $color-blue;
+$gradient-dark: linear-gradient(124.04deg, rgba(182, 26, 255, 0.5) -6.27%, rgba(0, 26, 255, 0.5) 98.36%), #656CFF;

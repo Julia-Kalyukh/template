@@ -1,0 +1,48 @@
+.menu {
+    width: 241px;
+    padding: 32px 16px; 
+
+    background-color: $color-bg-menu;
+}
+
+.menu__list {
+    padding: 0;
+
+    &:not(:last-child) {
+        margin-bottom: 80px;
+    }
+}
+
+.menu__link {
+    display: block;
+    color: $color-menu-link;
+
+    &:hover,
+    &:focus,
+    &:active {
+        text-decoration: none;
+    }
+
+    &--main {
+        margin-bottom: 24px;
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: $color-menu-link-active;
+        }
+    }
+
+    &--second {
+        padding: 8px 4px;
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: $color-menu-link-active-v2;
+            background: $gradient-light;
+            border-radius: 10px;
+            transition: 0.3s background;
+        }
+    }
+}
