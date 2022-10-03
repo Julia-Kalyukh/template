@@ -9,7 +9,7 @@ const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const fileinclude = require('gulp-file-include');
 const babel = require('gulp-babel');
-// const svgStore = require('gulp-svgstore');
+const svgStore = require('gulp-svgstore');
 const replace = require('gulp-replace');
 const del = require('del');
 
@@ -84,13 +84,13 @@ gulp.task('html', function() {
         .pipe(gulp.dest("dist/"));
 });
 
-// // Спрайт
-// gulp.task('sprite', function () {
-//     return gulp.src('src/media/icons/icons-sprite/**/*.svg')
-//         .pipe(svgStore({inlineSvg: true}))
-//         .pipe(rename('sprite.svg'))
-//         .pipe(gulp.dest('dist/media/icons'));
-// });
+// Спрайт
+gulp.task('sprite', function () {
+    return gulp.src('src/images/icons/icons-sprite/**/*.svg')
+        .pipe(svgStore({inlineSvg: true}))
+        .pipe(rename('sprite.svg'))
+        .pipe(gulp.dest('dist/images/icons'));
+});
 
 gulp.task('scripts-main', function() {
     return gulp.src(["src/js/**/*.js"])
@@ -178,7 +178,7 @@ gulp.task('default',
         // 'styles-vendor',
         'scripts-main',
         // 'scripts-vendor',
-        // 'sprite',
+        'sprite',
         'copy',
         'html',
         // 'svg-list',
@@ -192,7 +192,7 @@ gulp.task('build',
         // 'styles-vendor',
         'scripts-main',
         // 'scripts-vendor',
-        // 'sprite',
+        'sprite',
         'copy',
         'html',
     )

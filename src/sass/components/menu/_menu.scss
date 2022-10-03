@@ -14,8 +14,20 @@
 }
 
 .menu__link {
-    display: block;
+    display: flex;
+    align-items: center;
+    padding: 8px 4px;
+
     color: $color-menu-link;
+    transition: 0.3s ease-in-out;
+
+    svg {
+        display: inline-block;
+        margin-right: 8px;
+        fill: $color-menu-link;
+        transition: 0.3s ease-in-out;
+
+    }
 
     &:hover,
     &:focus,
@@ -30,19 +42,25 @@
         &:focus,
         &:active {
             color: $color-menu-link-active;
+
+            svg {
+                fill: $color-menu-link-active;
+            }
         }
     }
 
     &--second {
-        padding: 8px 4px;
+      border-radius: 10px;
 
         &:hover,
         &:focus,
         &:active {
             color: $color-menu-link-active-v2;
             background: $gradient-light;
-            border-radius: 10px;
-            transition: 0.3s background;
+
+            svg {
+              fill: $color-menu-link-active-v2;
+          }
         }
     }
 }
