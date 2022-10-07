@@ -1,5 +1,7 @@
 .menu {
-    width: 241px;
+    width: 100%;
+    max-width: 240px;
+    min-height: 100vh;
     padding: 32px 16px; 
 
     background-color: $color-bg-menu;
@@ -7,6 +9,7 @@
 
 .menu__list {
     padding: 0;
+    list-style-type: none;
 
     &:not(:last-child) {
         margin-bottom: 80px;
