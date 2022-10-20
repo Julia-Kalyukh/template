@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="ru">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Шаблон Организации</title>
-  <link rel="stylesheet" href="css/style.min.css">
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Шаблон Организации</title>
+    <link rel="stylesheet" href="css/style.min.css">
+    <script defer src="js/main.min.js"></script>
+  </head>
 
-<body>
-  <div class="container organization">
+  <body>
+    <div class="container organization">
 
-    <aside class="menu">
+      <aside class="menu">
 
     <ul class="menu__list">
         <li>
@@ -46,138 +47,175 @@
 
 </aside>
 
-    <main class="content-wrapper">
+      <main class="content-wrapper">
 
-      <header class="organization__header">
-        <h1>ИП Васильев</h1>
-        <div class="organization__header_buttons">
-          <button class="organization__header_btn organization__header_btn--add"><svg width="28" height="28"
-              aria-hidden="true" focusable="false">
-              <use xlink:href="/images/icons/sprite.svg#plus"></use>
-            </svg></button>
-          <button class="organization__header_btn organization__header_btn--settings"><svg width="28" height="28"
-              aria-hidden="true" focusable="false">
-              <use xlink:href="/images/icons/sprite.svg#settings"></use>
-            </svg></button>
+        <header class="organization__header">
+          <h1>ИП Васильев</h1>
+          <div class="organization__header_buttons">
+            <button class="organization__header_btn organization__header_btn--add"><svg width="28" height="28"
+                aria-hidden="true" focusable="false">
+                <use xlink:href="/images/icons/sprite.svg#plus"></use>
+              </svg></button>
+            <button class="organization__header_btn organization__header_btn--settings"><svg width="28" height="28"
+                aria-hidden="true" focusable="false">
+                <use xlink:href="/images/icons/sprite.svg#settings"></use>
+              </svg></button>
+          </div>
+        </header>
+
+        <div class="main__cards">
+          <article class="main__card main__card--fields">
+            <h3 class="main__card_header">Работа с полями</h3>
+          </article>
+          <article class="main__card main__card--map">
+            <h3 class="main__card_header">Статистика урожая</h3>
+            <span class="main__card_subheader">Поволжье</span>
+
+            <div class="main__card_content">
+              <img src="images/img/map.svg" alt="Изображение карты России с регионами">
+            </div>
+          </article>
+          <article class="main__card main__card--weather">
+            <h3 class="main__card_header">Погода в Курской области</h3>
+
+            <div class="main__card_content">
+              <div class="main__card_content-item">
+                <span>28.08.2020</span>
+                <span>Среда</span>
+              </div>
+              <div class="main__card_content-item">
+                <span>+28<sup>℃</sup></span>
+              </div>
+              <div class="main__card_content-item">
+                <span>750 мм рт. ст.</span>
+                <span>3,5 м/с</span>
+              </div>
+              <div class="main__card_content-item">
+                <span>Солнечно</span>
+                <span>Осадки 7%</span>
+              </div>
+            </div>
+          </article>
+          <article class="main__card main__card--statistics">
+            <h3 class="main__card_header">Отчёты и статистика </h3>
+
+            <div class="main__card_content">
+              <div class="main__card_content-item">
+                <table class="main__card_table main__card_table--statistics">
+                  <thead>
+                    <tr>
+                      <th>2020 год</th>
+                      <th>2019 год</th>
+                      <th>2018 год</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>123 000 000 ₽</td>
+                      <td>123 587 569 ₽</td>
+                      <td>258 654 588 ₽</td>
+                    </tr>
+                    <tr>
+                      <td>90 568 666 ₽</td>
+                      <td>123 587 569 ₽</td>
+                      <td>258 654 588 ₽</td>
+                    </tr>
+                    <tr>
+                      <td>200 568 666 ₽</td>
+                      <td>123 587 569 ₽</td>
+                      <td>258 654 588 ₽</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="main__card_content-item main__card_content-item--chart">
+                <img src="images/img/charts/chart_report.svg" alt="Изображение линейчатой диаграммы">
+              </div>
+            </div>
+          </article>
+          <article class="main__card main__card--employees">
+            <h3 class="main__card_header">Сотрудники</h3>
+
+            <div class="main__card_content">
+              <div class="main__card_content-item js-item-block">
+                <div class="main__card_content-employees">
+                  <span class="main__card_employees-name">Иванов Иван Иванович</span>
+                  <span class="main__card_employees-post">Заместитель</span>
+                </div>
+                <div class="main__card_content-contacts">
+                  <a href="tel:+78008008888">
+                    <svg width="16" height="16" aria-hidden="true" focusable="false">
+                      <use xlink:href="/images/icons/sprite.svg#phone"></use>
+                    </svg>
+                  </a>
+                  <a href="mailto:mail@gmail.com">
+                    <svg width="18" height="13" aria-hidden="true" focusable="false">
+                      <use xlink:href="/images/icons/sprite.svg#mail"></use>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+              <div class="main__card_content-item js-item-block">
+                <div class="main__card_content-employees">
+                  <span class="main__card_employees-name">Константинов Иван Иванович</span>
+                  <span class="main__card_employees-post">Секретарь</span>
+                </div>
+                <div class="main__card_content-contacts">
+                  <a href="tel:+78008008888">
+                    <svg width="16" height="16" aria-hidden="true" focusable="false">
+                      <use xlink:href="/images/icons/sprite.svg#phone"></use>
+                    </svg>
+                  </a>
+                  <a href="mailto:mail@gmail.com">
+                    <svg width="18" height="13" aria-hidden="true" focusable="false">
+                      <use xlink:href="/images/icons/sprite.svg#mail"></use>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+              <div class="main__card_content-item js-item-block">
+                <div class="main__card_content-employees">
+                  <span class="main__card_employees-name">Кузнецов Иван Иванович</span>
+                  <span class="main__card_employees-post">Секретарь</span>
+                </div>
+                <div class="main__card_content-contacts">
+                  <a href="tel:+78008008888">
+                    <svg width="16" height="16" aria-hidden="true" focusable="false">
+                      <use xlink:href="/images/icons/sprite.svg#phone"></use>
+                    </svg>
+                  </a>
+                  <a href="mailto:mail@gmail.com">
+                    <svg width="18" height="13" aria-hidden="true" focusable="false">
+                      <use xlink:href="/images/icons/sprite.svg#mail"></use>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+              <div class="main__card_content-item js-item-block">
+                <div class="main__card_content-employees">
+                  <span class="main__card_employees-name">Александров Иван Иванович</span>
+                  <span class="main__card_employees-post">Секретарь</span>
+                </div>
+                <div class="main__card_content-contacts">
+                  <a href="tel:+78008008888">
+                    <svg width="16" height="16" aria-hidden="true" focusable="false">
+                      <use xlink:href="/images/icons/sprite.svg#phone"></use>
+                    </svg>
+                  </a>
+                  <a href="mailto:mail@gmail.com">
+                    <svg width="18" height="13" aria-hidden="true" focusable="false">
+                      <use xlink:href="/images/icons/sprite.svg#mail"></use>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <button class="main__card_btn main__card_btn--all js-show-contacts">Показать все</button>
+          </article>
         </div>
-      </header>
 
-      <div class="main__cards">
-        <article class="main__card main__card--fields">
-          <h3 class="main__card_header">Работа с полями</h3>
-        </article>
-        <article class="main__card main__card--map">
-          <h3 class="main__card_header">Статистика урожая</h3>
-          <span class="main__card_subheader">Поволжье</span>
-
-          <div class="main__card_content">
-            <img src="images/img/map.svg" alt="Изображение карты России с регионами">
-          </div>
-        </article>
-        <article class="main__card main__card--weather">
-          <h3 class="main__card_header">Погода в Курской области</h3>
-
-          <div class="main__card_content">
-            <div class="main__card_content-item">
-              <span>28.08.2020</span>
-              <span>Среда</span>
-            </div>
-            <div class="main__card_content-item">
-              <span>+28<sup>℃</sup></span>
-            </div>
-            <div class="main__card_content-item">
-              <span>750 мм рт. ст.</span>
-              <span>3,5 м/с</span>
-            </div>
-            <div class="main__card_content-item">
-              <span>Солнечно</span>
-              <span>Осадки 7%</span>
-            </div>
-          </div>
-        </article>
-        <article class="main__card main__card--statistics">
-          <h3 class="main__card_header">Отчёты и статистика </h3>
-
-          <div class="main__card_content">
-            <div class="main__card_content-item">
-              <table class="main__card_table main__card_table--statistics">
-                <thead>
-                  <tr>
-                    <th>2020 год</th>
-                    <th>2019 год</th>
-                    <th>2018 год</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>123 000 000 ₽</td>
-                    <td>123 587 569 ₽</td>
-                    <td>258 654 588 ₽</td>
-                  </tr>
-                  <tr>
-                    <td>90 568 666 ₽</td>
-                    <td>123 587 569 ₽</td>
-                    <td>258 654 588 ₽</td>
-                  </tr>
-                  <tr>
-                    <td>200 568 666 ₽</td>
-                    <td>123 587 569 ₽</td>
-                    <td>258 654 588 ₽</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="main__card_content-item main__card_content-item--chart">
-              <img src="images/img/charts/chart_report.svg" alt="Изображение линейчатой диаграммы">
-            </div>
-          </div>
-        </article>
-        <article class="main__card main__card--employees">
-          <h3 class="main__card_header">Сотрудники</h3>
-
-          <div class="main__card_content">
-            <div class="main__card_content-item">
-              <div class="main__card_content-employees">
-                <span class="main__card_employees-name">Иванов Иван Иванович</span>
-                <span class="main__card_employees-post">Заместитель</span>
-              </div>
-              <div class="main__card_content-contacts">
-                <a href="tel:+78008008888">
-                  <svg width="16" height="16" aria-hidden="true" focusable="false">
-                    <use xlink:href="/images/icons/sprite.svg#phone"></use>
-                  </svg>
-                </a>
-                <a href="mailto:mail@gmail.com">
-                  <svg width="18" height="13" aria-hidden="true" focusable="false">
-                    <use xlink:href="/images/icons/sprite.svg#mail"></use>
-                  </svg>
-                </a>
-              </div>
-            </div>
-            <div class="main__card_content-item">
-              <div class="main__card_content-employees">
-                <span class="main__card_employees-name">Константинов Иван Иванович</span>
-                <span class="main__card_employees-post">Секретарь</span>
-              </div>
-              <div class="main__card_content-contacts">
-                <a href="tel:+78008008888">
-                  <svg width="16" height="16" aria-hidden="true" focusable="false">
-                    <use xlink:href="/images/icons/sprite.svg#phone"></use>
-                  </svg>
-                </a>
-                <a href="mailto:mail@gmail.com">
-                  <svg width="18" height="13" aria-hidden="true" focusable="false">
-                    <use xlink:href="/images/icons/sprite.svg#mail"></use>
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-          <button class="main__card_btn main__card_btn--all">Показать все</button>
-        </article>
-      </div>
-    </main>
-  </div>
-</body>
+      </main>
+    </div>
+  </body>
 
 </html>

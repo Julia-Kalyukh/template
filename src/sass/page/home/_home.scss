@@ -1,7 +1,9 @@
 .main__cards {
     display: flex;
+    align-content: flex-start;
     flex-wrap: wrap;
     margin: -15px;
+    min-height: calc(100vh - 80px - 52px * 2);
 }
 
 .main__card {
@@ -79,6 +81,8 @@
 
     &--employees {
         width: 340px;
+        height: 100%;
+        min-height: 230px;
 
         .main__card_content {
             display: flex;
@@ -86,8 +90,13 @@
         }
 
         .main__card_content-item {
-            display: flex;
+            display: none;
             justify-content: space-between;
+
+            &:nth-child(1),
+            &:nth-child(2) {
+                display: flex !important;
+            }
 
             &:not(:last-child) {
                 margin-bottom: 12px;
@@ -172,4 +181,8 @@
     font-weight: 600;
 
     color: $color-text-link;
+
+    &--all {
+        display: none;
+    }
 }
