@@ -1,0 +1,20 @@
+.scroll-x {
+  /* Works on Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: $color-table-border $color-bg-card;
+
+  /* Works on Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 1px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: $color-bg-card;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: $color-table-border;
+    border-radius: 20px;
+    border: 1px solid $color-table-border;
+  }
+}

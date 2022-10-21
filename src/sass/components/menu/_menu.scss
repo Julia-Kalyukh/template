@@ -1,69 +1,121 @@
-.menu {
-    width: 100%;
-    max-width: 240px;
-    min-height: 100vh;
-    padding: 32px 16px; 
+.menu__button {
+  @media (min-width: 1424px) {
+    display: none;
+  }
 
-    background-color: $color-bg-menu;
+  &-mobile {
+    @media (min-width: 501px) {
+      display: none;
+    }
+
+    @media (max-width: 500px) {
+      display: block;
+      margin: 8px 8px 0 auto;
+      padding: 8px;
+      transform: rotate(45deg);
+    }
+  }
+}
+
+.menu {
+  @media (max-width: 1423px) {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+
+    display: none;
+    background: $color-bg-overlay;
+    z-index: 10;
+  }
+
+  @media (max-width: 500px) {
+    background: $color-bg-menu;
+  }
+}
+
+.menu__wrapper {
+  width: 100%;
+  max-width: 240px;
+  min-height: 100vh;
+  padding: 32px 16px;
+
+  background-color: $color-bg-menu;
+
+  @media (max-width: 1423px) {
+    position: absolute;
+    min-height: 100%;
+  }
+
+  @media (max-width: 500px) {
+    max-width: 100%;
+    padding-top: 16px;
+  }
 }
 
 .menu__list {
-    padding: 0;
-    list-style-type: none;
+  padding: 0;
+  list-style-type: none;
 
-    &:not(:last-child) {
-        margin-bottom: 80px;
+  &:not(:last-child) {
+    margin-bottom: 80px;
+
+    @media (max-width: 500px) {
+      margin-bottom: 32px;
     }
+  }
 }
 
 .menu__link {
-    display: flex;
-    align-items: center;
-    padding: 8px 4px;
+  display: flex;
+  align-items: center;
+  padding: 8px 4px;
 
-    color: $color-menu-link;
+  color: $color-menu-link;
+  transition: 0.3s ease-in-out;
+
+  svg {
+    display: inline-block;
+    margin-right: 8px;
+    fill: $color-menu-link;
     transition: 0.3s ease-in-out;
+  }
 
-    svg {
-        display: inline-block;
-        margin-right: 8px;
-        fill: $color-menu-link;
-        transition: 0.3s ease-in-out;
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
+  }
 
+  &--main {
+    margin-bottom: 24px;
+
+    @media (max-width: 500px) {
+      margin-bottom: 16px;
     }
 
     &:hover,
     &:focus,
     &:active {
-        text-decoration: none;
+      color: $color-menu-link-active;
+
+      svg {
+        fill: $color-menu-link-active;
+      }
     }
+  }
 
-    &--main {
-        margin-bottom: 24px;
+  &--second {
+    border-radius: 10px;
 
-        &:hover,
-        &:focus,
-        &:active {
-            color: $color-menu-link-active;
+    &:hover,
+    &:focus,
+    &:active {
+      color: $color-menu-link-active-v2;
+      background: $gradient-light;
 
-            svg {
-                fill: $color-menu-link-active;
-            }
-        }
+      svg {
+        fill: $color-menu-link-active-v2;
+      }
     }
-
-    &--second {
-      border-radius: 10px;
-
-        &:hover,
-        &:focus,
-        &:active {
-            color: $color-menu-link-active-v2;
-            background: $gradient-light;
-
-            svg {
-              fill: $color-menu-link-active-v2;
-          }
-        }
-    }
+  }
 }

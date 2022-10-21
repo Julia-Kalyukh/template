@@ -1,38 +1,42 @@
 body {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 14px;
-    line-height: 19px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  line-height: 19px;
 
-    box-sizing: border-box;
-    background-color: $color-bg;
+  box-sizing: border-box;
+  background-color: $color-bg;
 }
 
 .container {
-    max-width: 1440px;
-    margin: 0 auto;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .organization {
-    display: flex;
-    background-color: $color-bg;
+  display: flex;
+  background-color: $color-bg;
 }
 
 .content-wrapper {
-    width: 100%;
-    margin: 52px 65px 52px 40px;
+  width: 100%;
+  margin: 3.61% 4.52% 3.61% 2.78%;
+
+  @media (max-width: 720px) {
+    margin: 32px 15px;
+  }
 }
 
 button {
-    appearance: none;
-    outline: none;
-    fill: $color-text-light;
-    border: none;
-    background: none;
+  appearance: none;
+  outline: none;
+  fill: $color-text-light;
+  border: none;
+  background: none;
 
-    &:hover,
-    &:focus,
-    &:active {
-        outline: none;
-        fill: $color-menu-link-active;
-    }
+  &:hover,
+  &:focus,
+  &:active {
+    outline: none;
+    fill: $color-menu-link-active;
+  }
 }

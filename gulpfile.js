@@ -17,7 +17,7 @@ const del = require('del');
 
 // const { STYLE_LIBS, JS_LIBS } = require('./gulp.config');
 
-gulp.task('server', function() {
+gulp.task('server', function () {
     server.init({
         server: {
             baseDir: "dist"
@@ -28,16 +28,16 @@ gulp.task('server', function() {
         ui: false,
     });
 
-    gulp.watch('src/**/*.html',{usePolling: true}, gulp.series('html', refresh));
-    gulp.watch('src/sass/**/*.{scss,sass}',{usePolling: true}, gulp.series('styles-main'));
-    gulp.watch('src/js/**/*.{js,json}',{usePolling: true}, gulp.series('scripts-main', refresh));
-    gulp.watch('src/images/**/*.svg',{usePolling: true}, gulp.series('icons', 'html', refresh));
-    gulp.watch('src/images/**/*.{png,jpg}',{usePolling: true}, gulp.series('images', 'html', refresh));
+    gulp.watch('src/**/*.html', { usePolling: true }, gulp.series('html', refresh));
+    gulp.watch('src/sass/**/*.{scss,sass}', { usePolling: true }, gulp.series('styles-main'));
+    gulp.watch('src/js/**/*.{js,json}', { usePolling: true }, gulp.series('scripts-main', refresh));
+    gulp.watch('src/images/**/*.svg', { usePolling: true }, gulp.series('icons', 'html', refresh));
+    gulp.watch('src/images/**/*.{png,jpg}', { usePolling: true }, gulp.series('images', 'html', refresh));
 });
 
 const refresh = (done) => {
-server.reload();
-done();
+    server.reload();
+    done();
 };
 
 // gulp.task('styles-vendor', function() {
@@ -48,30 +48,30 @@ done();
 //         .pipe(server.stream());
 // });
 
-gulp.task('styles-main', function() {
+gulp.task('styles-main', function () {
     return gulp.src("src/sass/**/*.{scss,sass}")
         .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
         .pipe(rename({ suffix: '.min', prefix: '' }))
         .pipe(autoprefixer({
             grid: true,
         }))
-        .pipe(cleanCSS({ 
-        compatibility: '*',
-        level: {
-            1: {
-            all: true,
-            normalizeUrls: false
+        .pipe(cleanCSS({
+            compatibility: '*',
+            level: {
+                1: {
+                    all: true,
+                    normalizeUrls: false
+                },
+                2: {
+                    restructureRules: true
+                }
             },
-            2: {
-            restructureRules: true
-            }
-        },
         }))
         .pipe(gulp.dest("dist/css"))
         .pipe(server.stream());
 });
 
-gulp.task('html', function() {
+gulp.task('html', function () {
     return gulp.src(["src/html/*.html", "src/html/pages/**/*.html"])
         .pipe(fileinclude({
             prefix: '@@',
@@ -80,19 +80,19 @@ gulp.task('html', function() {
                 test: 'text'
             }
         }))
-        .pipe(rename({dirname: ''}))
+        .pipe(rename({ dirname: '' }))
         .pipe(gulp.dest("dist/"));
 });
 
 // Спрайт
 gulp.task('sprite', function () {
     return gulp.src('src/images/icons/icons-sprite/**/*.svg')
-        .pipe(svgStore({inlineSvg: true}))
+        .pipe(svgStore({ inlineSvg: true }))
         .pipe(rename('sprite.svg'))
         .pipe(gulp.dest('dist/images/icons'));
 });
 
-gulp.task('scripts-main', function() {
+gulp.task('scripts-main', function () {
     return gulp.src(["src/js/**/*.js"])
         .pipe(babel({ presets: ['@babel/preset-env'] }))
         // .pipe(concat('script.js'))
@@ -109,17 +109,17 @@ gulp.task('scripts-main', function() {
 //         .pipe(gulp.dest("dist/js"));
 // });
 
-gulp.task('fonts', function() {
+gulp.task('fonts', function () {
     return gulp.src("src/fonts/**/*")
         .pipe(gulp.dest("dist/fonts"));
 });
 
-gulp.task('icons', function() {
+gulp.task('icons', function () {
     return gulp.src("src/images/icons/**/*.svg")
         .pipe(gulp.dest("dist/images/icons"));
 });
 
-gulp.task('images', function() {
+gulp.task('images', function () {
     return gulp.src("src/images/img/**/*.{png,jpg,svg}")
         .pipe(gulp.dest("dist/images/img"));
 });
