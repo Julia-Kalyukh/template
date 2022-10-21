@@ -18,6 +18,8 @@
 }
 
 .menu {
+  display: block;
+
   @media (max-width: 1423px) {
     position: fixed;
     height: 100%;

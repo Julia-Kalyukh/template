@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     menu.addEventListener('click', function (e) {
-      if (!e.target.matches('.menu__wrapper')) {
+      if (!e.target.matches('.menu__wrapper, .menu__link')) {
         closeMenu();
       }
     });
